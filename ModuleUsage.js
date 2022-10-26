@@ -9,7 +9,9 @@ var { User, aConstant } = require("./Module");
 
 console.log(User.getUserInfo())
 
+//User = {};
 User.name = "Paribesh"
+//aConstant = 4.13;
 
 console.log(User.getUserInfo())
 console.log(aConstant)

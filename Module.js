@@ -4,7 +4,7 @@ var User = {
     name : "MeheJabeen",
     address : "Somewhere on earth",
     sessionTraining : "MERNSTack",
-    getUserInfo : function (params) {
+    getUserInfo : function () {
         return { 
             name : this.name,//this is - context or execution context or scope in which function executes
             session : this.sessionTraining
@@ -25,7 +25,7 @@ var User2 = {
     name : "MeheJabeen",
     address : "Somewhere on earth",
     sessionTraining : "MERNSTack",
-    getUserInfo : function (params) {
+    getUserInfo : function () {
         return { 
             name : this.name,//this is - context or execution context or scope in which function executes
             session : this.sessionTraining
