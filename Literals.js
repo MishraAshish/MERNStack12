@@ -1,6 +1,11 @@
 //Global and Local - Variables/Scope
 
+//globalThis.myGlobal = "global Ang Li"
+myGlobal = "global Ang Li"
+
 globalExp = "gobal Paribesh"
+//var myGlobal = "global Ang Li"
+
 // var globalExp = "This is outer variable"
 // function MyFunc(params) {
 //     var localExmp = "Variable is local to the function"
