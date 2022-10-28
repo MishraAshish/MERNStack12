@@ -32,3 +32,28 @@ var funcExpression = function (a, b) {
 }
 
 console.log(funcExpression(5,6))
+
+//4. Constructor Function - will be used like a class
+
+function MyClass(fName, lName) {
+    this.fName = fName,
+    this.lName = lName,
+    
+    this.getFirstName = function () {
+        return this.fName;
+    }
+}
+
+var myClsObj = new MyClass("Jason", "Miller");
+console.log(myClsObj.getFirstName());
+
+//5. Nested Functions
+    function NestingInFunctions(params) {
+        function FuncA(params) {
+            function FuncB(params) {
+                function FuncC(params) {
+        
+                }
+            }
+        }   
+    }
