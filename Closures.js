@@ -19,17 +19,11 @@ function Account(acctNo, acctName) {
     var balance = "$3000";
     var acctType = "Credit";
     var pwdEncrypted = "!@5re98t";//this becomes private
-    var acctName = acctName;
-    var acctNo = acctNo;
+    //var acctName = acctName;
+    //var acctNo = acctNo;
 
     var childFunc = function (isAdmin, hasPwd) {
-        var retrunObj = {
-            balance,
-            acctType,
-            acctName,
-            acctNo
-        }
-
+        var retrunObj = { balance, acctType, acctName, acctNo }
         if (hasPwd) {
             return retrunObj;
         } else {
@@ -41,6 +35,6 @@ function Account(acctNo, acctName) {
 }
 
 var acctObj = Account("248756166", "SynerAdmin");
-console.log(acctObj(false, false))
+console.log(acctObj(false, true))
 
 //create a closure for Student function with encapsulating some set of data
