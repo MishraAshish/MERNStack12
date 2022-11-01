@@ -69,17 +69,20 @@ var UserInfo = {
 
     getUserInfo : function () {
 
-        console.log(`
-            User Name is  - ${this.name}
-            User Age is  - ${this.age}
-        `)
+        // console.log(`
+        //     User Name is  - ${this.name}
+        //     User Age is  - ${this.age}
+        // `)
+
+        console.log("outer this -", this)
 
         setTimeout(function () {
-            console.log(`
-            User Name is  - ${this.name}
-            User Age is  - ${this.age}
-        `) 
-        }, 2000)
+            console.log("inner this -", this)
+        //     console.log(`
+        //     User Name is With Bind - ${this.name}
+        //     User Age is With Bind - ${this.age}
+        // `) 
+        }.bind(this), 2000)
     }
 }
 
