@@ -39,8 +39,9 @@ NESe.GetSkills();
 
 
 //second example
-//var selectBtn = document.getElementById("newBtnBind")
+
 //<button id=​"newBtnBind">​Practice Bind​</button>​
+//var selectBtn = document.getElementById("newBtnBind")
 //var info = {"Event" : "Click", "Topic" : "Bind"}
 
 //var clickFunc = function(){alert(`The Event is ${this.Event} and topic is  ${this.Topic}`)}
