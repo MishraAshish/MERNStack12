@@ -65,3 +65,16 @@ console.log(Physics);
 console.log(Chemistry);
 console.log(InformationTech);
 
+//question :
+
+let StudentTest = {
+    firstname : "Put your name",
+    address : " ??",
+    sessionTopics : {
+        covered1 : "CoreJS",
+        covered2 : "OOJS"
+    }
+}
+
+//print firstname and sessionTopics, 
+//along with that also create a lastname and covered3 as "ES6", without making any change in StudentTest
