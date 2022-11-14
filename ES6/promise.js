@@ -1,20 +1,20 @@
 // callBack and callback hell - too much of call backs if one call back fails then other enter a infinite loop
 
-// function SigninSignUp(AuthenticationCallback, AuthorizationCallback, NavigationCallback) {
-//     let ValidUser =  AuthenticationCallback(userid, password, AuthorizationCallback); //making a server call - ajax (in async)
-//         if (ValidUser) {
-//             let userRole = AuthorizationCallback(ValidUser, NavigationCallback); //making a server call - ajax (in async)            
-//             //userRole.whatisTheOutput //success or failed -- promise
-//             if (userRole) { 
-//                 let nextPage = NavigationCallback(userRole) //making a server call - ajax (in async)
-//             } else {
-//                 //check again for the user validity
-//                 SigninSignUp(...callbacks);
-//             }
-//         } else {
-//             //send him on forgot password 
-//         }
-// }
+function SigninSignUp(AuthenticationCallback, AuthorizationCallback, NavigationCallback) {
+    let ValidUser =  AuthenticationCallback(userid, password, AuthorizationCallback); //making a server call - ajax (in async)
+        if (ValidUser) {
+            let userRole = AuthorizationCallback(ValidUser, NavigationCallback); //making a server call - ajax (in async)            
+            //userRole.whatisTheOutput //success or failed -- promise
+            if (userRole) { 
+                let nextPage = NavigationCallback(userRole) //making a server call - ajax (in async)
+            } else {
+                //check again for the user validity
+                SigninSignUp(...callbacks);
+            }
+        } else {
+            //send him on forgot password 
+        }
+}
 
 // SigninSignUp(AuthenticationFunc, AuthorizationFunc, NavigationFunc)
 // function AuthenticationFunc(params) {}
@@ -41,6 +41,7 @@ let LunchPromise = new Promise((resolve, reject)=>{
                 "Planned" : "Yes",
                 "Status" : "Success",
                 "Status Code" : 200
+                //"DetailedOutput" : authenticationData.UserObj
             })
         //}, 3000);
 
@@ -56,11 +57,12 @@ let LunchPromise = new Promise((resolve, reject)=>{
 console.log(LunchPromise);
 
 LunchPromise.then((data)=>{
+                console.log("Promise Call Successful ", data.detailedOutput)
+                return {detailedOutput : data.Status}
+            })
+            .then((data)=>{ //second then uses refined data in first then
                 console.log("Promise Call Successful ", data)
             })
-            // .then((data)=>{ //second then uses refined data in first then
-            //     console.log("Promise Call Successful ", data)
-            // })
             .catch((err)=>{
                 console.log("Promise Call Failed ", err)
             })
