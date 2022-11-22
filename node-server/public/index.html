@@ -1,14 +1,61 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--It is for HTML5 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- <meta name="ROBOTS" content="NOINDEX, NOFOLLOW"> To avoid Indexing our Page on google search engine-->
+    <meta name="ROBOTS" content="INDEX, FOLLOW"> <!--To Index our Page on google search engine -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main HTML</title>
+    <link rel='shortcut icon' type='image/x-icon' href="static/iconfinder_Gold-Cart.ico" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+            crossorigin="anonymous">
+    <title>Synergistic IT Page</title>
+    <style>
+        h1 {
+            color: pink;
+        }
+        section{
+            padding: 5px;
+            margin: 10px;
+            border: 1px solid paleturquoise;
+        }   
+        .myOwnText {
+            width: 200px;
+            background-color: brown;
+        }
+
+        #inputAge{
+            border: 1px solid green;
+            border-radius: 20px;
+        }
+
+        video {
+            margin-left: 200px;
+        }
+    </style>
 </head>
 <body>
     <h1>This is the main html page, loaded from express server!!</h1>
+    <h4 class="myOwnText">Working on html and styles</h4>
+    <form action="/">
+        <input type="email" maxlength="5" />
+        <input type="checkbox"  />
+        <input type="number" max="200" id="inputAge"/>        
+        <button onclick="Submit">Submit Form</button> 
+    </form>
+    <section>
+        <img src="static/hm_pic4.jpg" width="400px" height="300px"/>
+    </section>
+    <video width="320" height="240" controls autoplay>
+        <source src="static/video.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
 </body>
     <script src="static/userinfo.js" ></script>
     <!-- <script src="/getjs" ></script> -->
 </html>
+
+<!-- fluid-architecture - elments are equally divided in columns
+div-based architecture - these equally divided columns will have div as their parent @media - attributes -->

@@ -67,3 +67,11 @@ adminApp.get("/reports",(req, res)=>{ //localhost:3000/admin/reports
 app.listen(3000)
 
 console.log("node server is listening at port 3000");//localhost:3000/html => URI(API Endpoint)
+
+
+//HTTP Standard Status Codes
+
+//200 - Everything is okay and we'll response (200.1) - success
+//304 - Permanent Re-routing - The page we are looking is moved /page1 now /page2
+//404 - page not found
+//500 - error on application
