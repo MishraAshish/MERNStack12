@@ -49,3 +49,6 @@ async function asyncCall() {
 }
 asyncCall()
 console.log("async Execution end");
+
+//2009
+//Transpilation - babel is used to convert or transpile the latest ES6+React code into ES5 format/equivalent
