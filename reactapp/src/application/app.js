@@ -27,7 +27,7 @@ export default class ApplicationComponent extends Component{
                     <h6>{val1 * val2}</h6>
                 </div>
 
-                <Footer />
+                <Footer address1={address}/>
             </>
         )
     }
