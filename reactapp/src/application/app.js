@@ -1,7 +1,13 @@
-import React, { Component } from "react";
+import React, { Component,Suspense } from "react";
+import {BrowserRouter as Router, Routes, Redirect, Route} from "react-router-dom";// browser router from react
+
+import "./app.css";//css and style loaders are present in webpack config so we can use it here
+
 import Header from "./Common/HeaderComponent";
 import Footer from "./Common/FooterComponent";
 import Home from "./Common/HomeComponent";
+import About from "./Common/AboutComponent";
+import NotFound from "./Common/NotFoundComponent";
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -35,28 +41,22 @@ export default class ApplicationComponent extends Component{
         let val1 = 2, val2 =5;//state and props
         //JSX - Javascript Like XML 
         return(
-            <>
-                <Header/>
+            <Router>
+                <Suspense fallback={<div>Loading...</div>}></Suspense>
+                <Header/>                
+                {/* <h4>{this.state.counter}</h4> */}
                 
-                <h4>{this.state.counter}</h4>
-                
-                <Home title={this.state.title}/>
-                {/* <div>
-                    <h1>The React Page</h1>
-
-                    <h4>{myName}</h4>
-                    <h6>{address}</h6>
-                </div>
-                
-                <div>
-                    <h1>The React Page 2 2</h1>
-
-                    <h4>{val1 + val2}</h4>
-                    <h6>{val1 * val2}</h6>
-                </div> */}
+                {/* Here we'll use switch based conditions to render one component at a time */}
+                <Routes>
+                        <Route path="/" element={<Home  title={this.state.title} />} />
+                        <Route path="/home" element={<Home  title="Home Component" />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/about/:id" element={<About />} />
+                        <Route path="*" element={<NotFound />} />
+                </Routes>
 
                 <Footer address1={address}/>
-            </>
+            </Router>
         )
     }
 

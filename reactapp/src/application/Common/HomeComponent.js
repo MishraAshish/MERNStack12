@@ -54,7 +54,7 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
     clickEventHandler = (evt)=>{
         //alert("Button is Clicked!!")
         this.setState({
-            age : this.state.age //+ 1
+            age : this.state.age + 1
         })
 
         // this.state.age++;
