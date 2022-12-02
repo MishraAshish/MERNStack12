@@ -15,23 +15,9 @@ export default class ApplicationComponent extends Component{
 
         this.state = {
             title : "Home Page Of Application",
-            counter : 1
+            counter : 1,
+            headerTitle : "Welcome to SynergisticIT Shopping Cart"
         }
-
-        //this.increment();
-    }
-
-    increment = ()=>{
-        setInterval(() => {
-            this.state.counter++;
-            this.setState({ // the reseved API to pass the message to react library to invoke render method so that new v-dom can be created
-                counter : this.state.counter + 1
-            })
-
-            //we should avoid to use unless necessary
-            //this.forceUpdate();//force update also calls render method but skips other life cycle methods
-            console.log(this.state.counter);
-        }, 1000);
     }
 
     render(){
@@ -43,9 +29,7 @@ export default class ApplicationComponent extends Component{
         return(
             <Router>
                 <Suspense fallback={<div>Loading...</div>}></Suspense>
-                <Header/>                
-                {/* <h4>{this.state.counter}</h4> */}
-                
+                <Header headerTitle={this.state.headerTitle}/>                
                 {/* Here we'll use switch based conditions to render one component at a time */}
                 <Routes>
                         <Route path="/" element={<Home  title={this.state.title} />} />

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink, useNavigate } from "react-router-dom";
 
 let Header = (props)=>{
@@ -13,7 +14,7 @@ let Header = (props)=>{
     return(
         <>
             <div>
-                Hi, <b> Welcome to SynergisticIT Shopping Cart </b> 
+                Hi, <b> {props.headerTitle} </b> 
             </div>
             <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink> 
             <NavLink to="/user" className="button" activeclassname="success" >User </NavLink> 
@@ -22,6 +23,14 @@ let Header = (props)=>{
             <button onClick={func}>Go To About</button>
         </>
     )
+}
+
+// Header.defaultProps = {
+//     headerTitle : "Header Default Component"
+// }
+
+Header.propTypes = {
+    headerTitle : PropTypes.string.isRequired
 }
 
 export default Header;
