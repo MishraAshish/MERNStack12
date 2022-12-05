@@ -1,7 +1,7 @@
-import React, { Component, PureComponent } from "react";
-import About from "./AboutComponent";
-import ChildComponent from "./ChildFunction";
-import NotFound from "./NotFoundComponent";
+import React, { Component, PureComponent, createRef } from "react";
+// import About from "./AboutComponent";
+// import ChildComponent from "./ChildFunction";
+// import NotFound from "./NotFoundComponent";
 
 //export default class HomeComponent extends Component {
 export default class HomeComponent extends PureComponent { //Pure Component has implementation of shouldComponentUpdate
@@ -10,12 +10,24 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
         this.state = {
             age : 20,
             name : "Synergistic IT",
-            counter : 1
+            counter : 1,
+            sessionName : "MERNStack",
+            address : "Somewhere on Earth"
         }
         //getAllDistricts() - server call not allowed here
         //we can't access the html
         this.interval = "";//global variable of the class
-        this.user = {UserName:"Paribesh", Password : "Tegdeep"}
+        this.user = {UserName:"Paribesh", Password : "Tegdeep"};
+
+        //ref - keyword : used to read/update the html element out react framework
+        //ref - keyword uses
+        //for creating and accessing html out of react flow
+        //as we dont have any html selectors available in react so this provides a reference to html
+        this.inputAddress = createRef(); 
+        this.inputSession = createRef();
+
+        //this.inputAddress.current.focus();
+        //this.inputAddress.current.value = "Paribesh";
     }
 
     increment = ()=>{
@@ -38,6 +50,12 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
         //this.increment();
         //we can access the html and make call to server to fetch more data
         //getAllDistricts()
+        
+        setTimeout(() => {
+            this.inputAddress.current.focus();    
+            this.inputAddress.current.value = "Mehejabeen";
+            this.inputSession.current.value = "Paribesh";
+        }, 3000);        
     }
 
     //fetch the list of districts - ajax call
@@ -98,6 +116,35 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
         })
     }
 
+    readSessionNameData = (evt)=>{ //evt - is provided by JS to read the properties of HTML element
+        //alert("USer Typed "+ evt.target.value)
+        let targetValue = evt.target.value;
+        let classList = evt.target.classList;
+
+        if (classList.contains("sessionText")) {
+            this.setState({
+                sessionName : targetValue
+            });    
+        } else if(classList.contains("addressText")){
+            this.setState({
+                address : targetValue
+            });
+        }
+        evt.preventDefault();
+    }
+
+    formSubmit = (evt)=>{
+        let address = this.inputAddress.current.value;
+        let sessionName = this.inputSession.current.value;
+
+        this.setState({
+            address,
+            sessionName
+        })
+        
+        evt.preventDefault();
+    }
+
     //creation and updation life cycle method
     render(){
         console.log("Home Render!!");
@@ -106,14 +153,44 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
             <>
                 <h2>{this.props.title}</h2>
                 <label> {this.state.age} </label>
-
-                <ChildComponent name="Mehejabeen" user={this.user} clickOnChild={this.childClick}>
-                    <About/>
-                    <NotFound/>
-                </ChildComponent>
                 
                 <h4>{this.state.counter}</h4>
                 <button onClick={this.clickEventHandler}>Increment Age</button>
+
+                {/* <ChildComponent name="Mehejabeen" user={this.user} clickOnChild={this.childClick}>
+                    <About/>
+                    <NotFound/>
+                </ChildComponent> */}
+
+                {/* controllled component */}
+                <div className={"col-md-3"}>
+                    <label>{this.state.sessionName}</label>
+                    <input type={"text"} className={"sessionText"} placeholder={"Please Type Your Session"} maxLength={14} 
+                        value={this.state.sessionName} onChange={this.readSessionNameData}/>
+                    
+                    <label>{this.state.address}</label>
+                    <input type={"text"} className={"addressText"} placeholder={"Please Type Your Address"} maxLength={24} 
+                        value={this.state.address} onChange={(evt)=>{this.setState({address:evt.target.value})}} />
+                        {/*onChange={this.readSessionNameData}/>*/}
+                </div>
+
+                 {/* We are going to create an uncontrolled html form with html elements, 
+                    it is controlled element values are not going to be part of react state */}
+                <div>
+                 <form onSubmit={this.formSubmit} action="modernschool.com/new/admission">
+                     <label>
+                             Session Name:
+                             <input type="text" ref={this.inputSession} placeholder="Please enter session"/>
+                     </label>                    
+                     <label>
+                             Address:
+                             <input type="text" ref={this.inputAddress} placeholder="Please enter address"/>
+                     </label>
+
+                     <input type="submit" value="Submit" />
+                 </form>
+             </div>
+
             </>
         )
     }
