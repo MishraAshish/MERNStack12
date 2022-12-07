@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { NavLink, useNavigate } from "react-router-dom";
+import { connect } from "react-redux";
 
 let Header = (props)=>{
     let navigate = useNavigate();//this is called a useNavigate hook to navigate user on other page
@@ -11,10 +12,13 @@ let Header = (props)=>{
         navigate('/about/5000');
     }
 
+    let User = props.User;
     return(
         <>
             <div>
                 Hi, <b> {props.headerTitle} </b> 
+                <hr/>
+                {User.userName} {User.street}
             </div>
             <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink> 
             <NavLink to="/user" className="button" activeclassname="success" >User </NavLink> 
@@ -33,4 +37,13 @@ Header.propTypes = {
     headerTitle : PropTypes.string.isRequired
 }
 
-export default Header;
+//to subscribe from the store 
+let mapStateToProps = (state)=>{
+    return {
+        User : state.userReducer
+    }
+}
+
+//export default Header;
+
+export default connect(mapStateToProps, null)(Header);

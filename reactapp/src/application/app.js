@@ -8,6 +8,8 @@ import Footer from "./Common/FooterComponent";
 import Home from "./Common/HomeComponent";
 import About from "./Common/AboutComponent";
 import NotFound from "./Common/NotFoundComponent";
+//import User from "./AppComponents/UserComponent/UserComponent";
+import User from "./AppComponents/UserContainer/UserContainer";
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -34,6 +36,7 @@ export default class ApplicationComponent extends Component{
                 <Routes>
                         <Route path="/" element={<Home  title={this.state.title} />} />
                         <Route path="/home" element={<Home  title="Home Component" />} />
+                        <Route path="/user" element={<User />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/about/:id" element={<About />} />
                         <Route path="*" element={<NotFound />} />
