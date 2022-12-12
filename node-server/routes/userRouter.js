@@ -13,6 +13,7 @@ userRouter.post("/api/signinup",(req, res)=>{
             console.log(err)
             res.send("Error in fetching user!!")
         } else if(userData){ //get one user means its already present so return as it is userInfo - signin
+            //match password or allow oauth or two factor
             res.send(userData);
         }else {//this is the new user so we need to create mongodb object and save it - signup
 

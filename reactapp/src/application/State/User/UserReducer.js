@@ -3,7 +3,7 @@ import * as actionType from "../actionTypes";
 const InitialState = {
     userName : "Paribesh",
     password : "MERNSTack",
-    street : "default address",
+    street : "Somewhere on earth",
     mobile : "98989"
 }
 
@@ -14,7 +14,7 @@ let UserReducer = (state=InitialState, action)=>{
     switch (action.type) {
         case actionType.USER_ADDUSER:
                 
-                return action.payload;
+                return action.payload;//on the basis of action type being passed a new state is retruned
         default:
              return state;
     }
