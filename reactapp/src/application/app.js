@@ -12,6 +12,8 @@ import NotFound from "./Common/NotFoundComponent";
 import User from "./AppComponents/UserContainer/UserContainer";
 import UserHook from "./AppComponents/UserComponent/UserHooks";
 import UsingHooks from "./Hooks/UnderstandingHooks";
+import ProductComponent from "./AppComponents/Product/ProductComponent";
+import DisplayProducts from "./AppComponents/Product/DisplayProduct";
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -39,6 +41,8 @@ export default class ApplicationComponent extends Component{
                         <Route path="/" element={<Home  title={this.state.title} />} />
                         <Route path="/home" element={<Home  title="Home Component" />} />
                         <Route path="/user" element={<UserHook />} />
+                        <Route path="/product" element={<ProductComponent />} />
+                        <Route path="/display" element={<DisplayProducts />} />
                         <Route path="/hooks" element={<UsingHooks  name={"Mehejabeen"}/>} />
                         <Route path="/about" element={<About />} />
                         <Route path="/about/:id" element={<About />} />

@@ -8,6 +8,9 @@ let defaultRouter = require("./routes/defaultRouter");
 let userApp = express();
 let userRouter = require("./routes/userRouter");
 
+let productApp = express();
+let productRouter = require("./routes/productRouter");
+
 //setting cors middleware to make our api be public
 app.use(cors());
 
@@ -20,6 +23,9 @@ app.use(express.json({limit:'2mb', extended:false}));
 //localhost:9000/user/savedummy?userName=paribesh
 app.use("/user", userApp);
 userApp.use("/", userRouter);
+
+app.use("/product", productApp);
+productApp.use("/", productRouter);
 
 app.use("/",defaultRouter);
 
