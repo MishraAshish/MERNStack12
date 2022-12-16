@@ -1,10 +1,10 @@
 import * as actionType from "../actionTypes";
 
 const InitialState = {
-    userName : "Paribesh",
-    password : "MERNSTack",
-    street : "Somewhere on earth",
-    mobile : "98989"
+    userName : "",
+    password : "",
+    street : "",
+    mobile : ""
 }
 
 //create a reducer
