@@ -1,5 +1,7 @@
 import * as actionType from "../actionTypes";
 import axios from "axios";
+import { getUserCart } from "../Cart/CartAction";
+
 
 export const AddUser = (user)=>{
     return {
@@ -23,7 +25,7 @@ export const signInSignUpUser = (user)=>{
                     //alert(JSON.stringify(signdUser))
                     //sending user to the store
                     dispatch(AddUser(signdUser));//dispatching action with signed user 
-                    //dispatch(getUserCart(signdUser._id))
+                    dispatch(getUserCart(signdUser._id))
                 })
                 .catch((err)=>{
                     console.log("err in login ", err)

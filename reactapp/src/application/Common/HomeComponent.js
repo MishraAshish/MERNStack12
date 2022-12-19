@@ -150,19 +150,34 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
         console.log("Home Render!!");
 
         return(
-            <>
-                <h2>{this.props.title}</h2>
+            <div className={"loadimage form"} >
+                <h1>{this.state.title}</h1>
+                <b className="feature">{"Product Feature's :"}</b>
+                <ul>                     
+                    <li>Sign up new users</li>
+                    <li>Login existing users.</li>                
+                    <li>Allow user's to add to cart.</li>
+                    <li>Save the user's cart.</li>
+                    <li>Checkout and pay for items.</li>
+                    <li>Allow users to cancel the order.</li>
+                    <li>Allow users to reorder the cart.</li>
+                    <li>Add products/items to create product collection.</li>
+                    <li>Allow users to give ratings to each product.</li>
+                    <li>Have notifications on top right with logout.</li>
+                </ul>
+            
+                {/*<h2>{this.props.title}</h2>
                 <label> {this.state.age} </label>
                 
                 <h4>{this.state.counter}</h4>
                 <button onClick={this.clickEventHandler}>Increment Age</button>
 
-                {/* <ChildComponent name="Mehejabeen" user={this.user} clickOnChild={this.childClick}>
+                 <ChildComponent name="Mehejabeen" user={this.user} clickOnChild={this.childClick}>
                     <About/>
                     <NotFound/>
                 </ChildComponent> */}
 
-                {/* controllled component */}
+                {/* controllled component 
                 <div className={"col-md-3"}>
                     <label>{this.state.sessionName}</label>
                     <input type={"text"} className={"sessionText"} placeholder={"Please Type Your Session"} maxLength={14} 
@@ -171,11 +186,12 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
                     <label>{this.state.address}</label>
                     <input type={"text"} className={"addressText"} placeholder={"Please Type Your Address"} maxLength={24} 
                         value={this.state.address} onChange={(evt)=>{this.setState({address:evt.target.value})}} />
-                        {/*onChange={this.readSessionNameData}/>*/}
-                </div>
+                        onChange={this.readSessionNameData}/>
+                </div>*/}
 
                  {/* We are going to create an uncontrolled html form with html elements, 
                     it is controlled element values are not going to be part of react state */}
+                {/*
                 <div>
                  <form onSubmit={this.formSubmit} action="modernschool.com/new/admission">
                      <label>
@@ -192,6 +208,9 @@ export default class HomeComponent extends PureComponent { //Pure Component has 
              </div>
 
             </>
+            */}
+
+        </div>
         )
     }
 

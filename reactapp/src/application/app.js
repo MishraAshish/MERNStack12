@@ -14,6 +14,7 @@ import UserHook from "./AppComponents/UserComponent/UserHooks";
 import UsingHooks from "./Hooks/UnderstandingHooks";
 import ProductComponent from "./AppComponents/Product/ProductComponent";
 import DisplayProducts from "./AppComponents/Product/DisplayProduct";
+import CartComponent from "./AppComponents/Cart/CartComponent";
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -42,6 +43,7 @@ export default class ApplicationComponent extends Component{
                         <Route path="/home" element={<Home  title="Home Component" />} />
                         <Route path="/user" element={<UserHook />} />
                         <Route path="/product" element={<ProductComponent />} />
+                        <Route path="/cart" element={<CartComponent />} />
                         <Route path="/display" element={<DisplayProducts />} />
                         <Route path="/hooks" element={<UsingHooks  name={"Mehejabeen"}/>} />
                         <Route path="/about" element={<About />} />

@@ -11,6 +11,9 @@ let userRouter = require("./routes/userRouter");
 let productApp = express();
 let productRouter = require("./routes/productRouter");
 
+let cartApp = express();
+let carttRouter = require("./routes/cartRouter");
+
 //setting cors middleware to make our api be public
 app.use(cors());
 
@@ -26,6 +29,9 @@ userApp.use("/", userRouter);
 
 app.use("/product", productApp);
 productApp.use("/", productRouter);
+
+app.use("/cart", cartApp);
+cartApp.use("/", carttRouter);
 
 app.use("/",defaultRouter);
 

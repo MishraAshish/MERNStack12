@@ -10,6 +10,7 @@ import thunk from "redux-thunk"; //is used to pipeline the dispatched objects an
 
 import userReducer from "./User/UserReducer";
 import productReducer from "./Product/productReducer";
+import cartReducer from "./Cart/cartReducer";
 
 //custom middleware function to log action raised
 const logger = () => (next) => (action) => {
@@ -20,7 +21,8 @@ const logger = () => (next) => (action) => {
 
 const rootReducer = combineReducers({
     userReducer, //userReducer : userReducer
-    productReducer
+    productReducer,
+    cartReducer
 })
 //store.userReducer.UserName
 
