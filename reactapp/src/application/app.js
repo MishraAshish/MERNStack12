@@ -15,6 +15,8 @@ import UsingHooks from "./Hooks/UnderstandingHooks";
 import ProductComponent from "./AppComponents/Product/ProductComponent";
 import DisplayProducts from "./AppComponents/Product/DisplayProduct";
 import CartComponent from "./AppComponents/Cart/CartComponent";
+import Checkout from "./AppComponents/Checkout/CheckoutComponent"
+import Coupon from "./AppComponents/Coupon/CouponComponent"
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -45,6 +47,8 @@ export default class ApplicationComponent extends Component{
                         <Route path="/product" element={<ProductComponent />} />
                         <Route path="/cart" element={<CartComponent />} />
                         <Route path="/display" element={<DisplayProducts />} />
+                        <Route path="/checkout" element={<Checkout />} />
+                        <Route path="/coupon" element={<Coupon />} />
                         <Route path="/hooks" element={<UsingHooks  name={"Mehejabeen"}/>} />
                         <Route path="/about" element={<About />} />
                         <Route path="/about/:id" element={<About />} />

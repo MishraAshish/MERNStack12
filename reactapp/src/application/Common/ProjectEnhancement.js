@@ -1,3 +1,19 @@
+// 03-01-2023 - Practice
+
+// Coupon Page 
+// Create a component with Name - CouponComponent (Functional Component and Use Hooks)
+// On the page add a Button - GenerateCoupon
+// Upon Click Generate a random coupon of - 6 digits (basically a numeric random value)
+// Dispatch this generated coupon using useDispatch
+// Create a Coupon Reducer to have Coupon Value, Use Reducer to update the coupon value (useSelector coupon)
+// Create action to pass coupon to reducer, with type and payload
+
+// Part 2 : 
+// Hide all the links except : Home, User and About for a user not logged-in
+// In Product Component show Save to product section only to a user with name "admin" so that not all users 
+// can insert the products to database 
+
+
 // 21-12-2022 - Practice
 
 // Checkout Component
@@ -35,3 +51,10 @@
 // Create a form to allow user to submit Product Details - name, price, desc, rating
 // Create an action method to add the detail to database using a server api
 // Server Side - Create product router and api to save the product using productdatamodel
+
+
+// Other Practice Questions - 27-12-2022
+// Practice - 1
+
+//1. Create a component with name Hobby, add a textbox to insert hobbyname into it and save it to the database using SaveAPI
+//2. Create an action to save the hobby, can use useractions file and userrouter file for the same
