@@ -16,7 +16,8 @@ import ProductComponent from "./AppComponents/Product/ProductComponent";
 import DisplayProducts from "./AppComponents/Product/DisplayProduct";
 import CartComponent from "./AppComponents/Cart/CartComponent";
 import Checkout from "./AppComponents/Checkout/CheckoutComponent"
-import Coupon from "./AppComponents/Coupon/CouponComponent"
+import Coupon from "./AppComponents/Coupon/CouponComponent";
+import Hooks from "./Hooks/UsingHooksMemo";
 
 export default class ApplicationComponent extends Component{
     constructor(props, context){
@@ -49,8 +50,9 @@ export default class ApplicationComponent extends Component{
                         <Route path="/display" element={<DisplayProducts />} />
                         <Route path="/checkout" element={<Checkout />} />
                         <Route path="/coupon" element={<Coupon />} />
-                        <Route path="/hooks" element={<UsingHooks  name={"Mehejabeen"}/>} />
+                        {/* <Route path="/hooks" element={<UsingHooks  name={"Mehejabeen"}/>} /> */}
                         <Route path="/about" element={<About />} />
+                        <Route path="/hooks" element={<Hooks />} />
                         <Route path="/about/:id" element={<About />} />
                         <Route path="*" element={<NotFound />} />
                 </Routes>

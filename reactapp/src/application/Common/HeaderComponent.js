@@ -19,6 +19,7 @@ let Header = (props)=>{
             {userName == "" ?<b> Please Login to see other features</b>:""}
             <div>
             <NavLink to="/home" className="button" activeclassname="success" >Home </NavLink> 
+            <NavLink to="/hooks" className="button" activeclassname="success" >Hooks </NavLink> 
             <NavLink to="/user" className="button" activeclassname="success" >{userName == "" ? "Login" : "User"} </NavLink> 
             {userName &&
                 <React.Fragment> 
