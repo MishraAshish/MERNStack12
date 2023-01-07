@@ -9,7 +9,7 @@ console.log("To Install All Modules present in package.json : npm i");
 "version": "1.0.0", Major:Minor:Patch
 NPM - npm cli (command line interfaces)
 
-To Clone in your own machine -
+To Clone in your own machine -  
 
 go to any directory where you want to clone and run below
 
